@@ -40,7 +40,6 @@ const Signup = () => {
       });
       return;
     }
-    console.log(name, email, password, pic);
     try {
       const config = {
         headers: {
@@ -57,7 +56,6 @@ const Signup = () => {
         },
         config
       );
-      console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       history.push("/chats");
     } catch (error) {
@@ -96,7 +94,6 @@ const Signup = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
-          console.log(data.url.toString());
         })
         .catch((err) => {
           console.log(err);

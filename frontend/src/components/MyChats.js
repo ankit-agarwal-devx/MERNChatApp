@@ -20,7 +20,6 @@ const MyChats = ({
   const toast = useToast();
 
   const fetchChats = async () => {
-    // console.log(user._id);
     try {
       const config = {
         headers: {
@@ -30,7 +29,6 @@ const MyChats = ({
 
       const { data } = await axios.get("/api/chat", config);
       setChats(data);
-      // console.log(data);
     } catch (error) {
       toast({
         title: "Error Occured!",
